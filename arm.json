@@ -35,7 +35,7 @@
       },
       "storageAccountName": {
         "type": "string",
-        "defaultValue": "randomstore19ITA29876588",
+        "defaultValue": "store19ITA29876588",
         "metadata": {
           "description": "The name of the storage account"
         }
