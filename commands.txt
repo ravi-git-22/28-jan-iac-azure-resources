@@ -1,0 +1,14 @@
+az deployment group create --name StorageDeployment --resource-group test-resource-group --template-file "arm.json"
+
+==============================================================================
+Delete RESOURCE GRPOUP in AZZURE:
+az group delete --name ExampleResourceGroup
+
+============================================================================== 
+AZURE SECRETS:
+az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/5aae9e5d-91e0-4e1f-b489-c5715e648985/resourceGroups/test-RG-28-JAN --sdk-auth
+
+=======
+
+
+after creating secrets in GITHUB ACTION settings ==> create new directory in VS code .github/workflows ====> move the <deploiy-arm.yml> file into the folder
