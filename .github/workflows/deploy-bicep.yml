@@ -1,5 +1,5 @@
-on: [push]
-name: Azure ARM
+on: [push] #when git push is given this starts runniung in github actions
+name: Azure ARM2
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
