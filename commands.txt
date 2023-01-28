@@ -8,6 +8,25 @@ az group delete --name ExampleResourceGroup
 AZURE SECRETS:
 az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/5aae9e5d-91e0-4e1f-b489-c5715e648985/resourceGroups/test-RG-28-JAN --sdk-auth
 
+>>>> az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/5aae9e5d-91e0-4e1f-b489-c5715e648985/resourceGroups/alphabetagroup --sdk-auth
+Option '--sdk-auth' has been deprecated and will be removed in a future release.
+Found an existing application instance: (id) e9bc5c2c-41fb-4587-96e6-440f5353bcff. We will patch it.
+Creating 'contributor' role assignment under scope '/subscriptions/5aae9e5d-91e0-4e1f-b489-c5715e648985/resourceGroups/alphabetagroup'
+  Role assignment already exists.
+
+The output includes credentials that you must protect. Be sure that you do not include these credentials in your code or check the credentials into your source control. For more information, see https://aka.ms/azadsp-cli
+{
+  "clientId": "f1af37b0-d60b-4890-b904-a275fac2eec0",
+  "clientSecret": "56V8Q~5AAWlfCJ1XqybUX5kTw5gjuHRKqjnfUbxb",
+  "subscriptionId": "5aae9e5d-91e0-4e1f-b489-c5715e648985",
+  "tenantId": "1fb92e0e-59eb-4452-9ffe-0788dedc0f8a",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
 ==============================================================================
 
 after creating secrets in GITHUB ACTION settings ==> create new directory in VS code .github/workflows ====> move the <deploiy-arm.yml> file into the folder
@@ -20,10 +39,34 @@ this runs the workflow in github actions & crate a storage tesource in the RG cr
 for further action--- try deploting a RG using arm.json and use that RG  to create a resource via github actions
 ============================================================================================================================================================
 
-crreating a resource using BICEP template (we aree using new bocep file, here we did not convert arm1.json into bicep  )
+crreating a resource using BICEP template (we aree using new bocep file, here we did not convert arm1.json into bicep "az bicep decompile --file arm1.json")
 
 main.bicep (outside the github folder)
 deploy-bicep.yml (stays inside workflows folder)
 
 
 
+================
+
+
+terraform files outside workflows folder and deploy-terraform.yml file inside the workflow folder
+
+az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/<subscriptionId> --sdk-auth
+
+===> az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/5aae9e5d-91e0-4e1f-b489-c5715e648985 --sdk-auth
+Option '--sdk-auth' has been deprecated and will be removed in a future release.
+Found an existing application instance: (id) e9bc5c2c-41fb-4587-96e6-440f5353bcff. We will patch it.
+Creating 'contributor' role assignment under scope '/subscriptions/5aae9e5d-91e0-4e1f-b489-c5715e648985'
+The output includes credentials that you must protect. Be sure that you do not include these credentials in your code or check the credentials into your source control. For more information, see https://aka.ms/azadsp-cli
+{
+  "clientId": "f1af37b0-d60b-4890-b904-a275fac2eec0",
+  "clientSecret": "fp38Q~LIpFl_jMQqejqLNHl.Ay.mQ.e-YGE-QaEu",
+  "subscriptionId": "5aae9e5d-91e0-4e1f-b489-c5715e648985",
+  "tenantId": "1fb92e0e-59eb-4452-9ffe-0788dedc0f8a",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
