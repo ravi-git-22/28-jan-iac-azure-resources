@@ -35,7 +35,7 @@
       },
       "storageAccountName": {
         "type": "string",
-        "defaultValue": "teststorx199994578",
+        "defaultValue": "teststor1x199994578",
         "metadata": {
           "description": "The name of the storage account"
         }
