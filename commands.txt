@@ -8,7 +8,22 @@ az group delete --name ExampleResourceGroup
 AZURE SECRETS:
 az ad sp create-for-rbac --name "myML" --role contributor --scopes /subscriptions/5aae9e5d-91e0-4e1f-b489-c5715e648985/resourceGroups/test-RG-28-JAN --sdk-auth
 
-=======
-
+==============================================================================
 
 after creating secrets in GITHUB ACTION settings ==> create new directory in VS code .github/workflows ====> move the <deploiy-arm.yml> file into the folder
+change the name of storage account in arm.json file "storageAccountName"
+
+git add . + git commit + git push
+
+this runs the workflow in github actions & crate a storage tesource in the RG created already
+
+for further action--- try deploting a RG using arm.json and use that RG  to create a resource via github actions
+============================================================================================================================================================
+
+crreating a resource using BICEP template (we aree using new bocep file, here we did not convert arm1.json into bicep  )
+
+main.bicep (outside the github folder)
+deploy-bicep.yml (stays inside workflows folder)
+
+
+
