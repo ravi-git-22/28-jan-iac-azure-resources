@@ -1,6 +1,6 @@
 
 resource "azurerm_resource_group" "terraform_resource_group" {
-  name     = "randomstringalibaba"
+  name     = "randomstringalibaba444"
   location = var.location
 }
 
