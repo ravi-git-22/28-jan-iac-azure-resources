@@ -1,0 +1,8 @@
+new folder back-end
+
+https://dotnet.microsoft.com/en-us/download/dotnet/6.0 >> download and install .net 6.0
+brew install --cask dotnet-sdk
+
+dotnet --version
+
+

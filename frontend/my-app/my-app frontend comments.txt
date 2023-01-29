@@ -1,0 +1,4 @@
+node --version
+npm --version
+npx create-react-app my-app .. to download app & files
+npm start
